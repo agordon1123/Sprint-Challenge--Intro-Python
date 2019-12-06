@@ -34,10 +34,9 @@ def cityreader(cities=[]):
   with open('src/cityreader/cities.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     # Passing by first value
-    iterspamreader = iter(spamreader)
-    next(iterspamreader)
+    next(spamreader)
     for row in spamreader:
-      cities.append(City(row[0], row[3], row[4]))
+      cities.append(City(row[0], float(row[3]), float(row[4])))
     
   return cities
 
